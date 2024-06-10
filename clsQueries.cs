@@ -38,9 +38,14 @@ namespace linq
             return juegosPS;
         }
 
-
-
         //WHERE
+        public IEnumerable<Game> ConsultaXBOX()
+        {
+            //extension method
+            return juegosXBOX.Where(p=> p.Plataforma.Contains("Xbox 360"));
+
+            //query expresion
+        }
 
         //CONTAINS
 

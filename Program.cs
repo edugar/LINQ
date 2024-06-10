@@ -14,7 +14,7 @@ while (!final)
             break;
         case 2:
             Console.WriteLine("CONTAINS");
-            ImprimirLista(consultas.JuegosPS());
+            ImprimirLista(consultas.ConsultaXBOX());
             break;
         case 3:
             Console.WriteLine("ALL");
@@ -140,10 +140,10 @@ void menu()
 
 void ImprimirLista(IEnumerable<Game> listaDeJuegos)
 {
-    Console.WriteLine("{0, -40} {1, -20} {2, -30}\n", "Titulo", "Desarrollador", "Editor");
+    Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
     foreach (var item in listaDeJuegos)
     {
-        Console.WriteLine("{0, -40} {1, -20} {2, -30}", item.Titulo, item.Desarrollador, item.Editor);
+        Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma[0], item.Desarrollador, item.Editor);
     }
 }
 
@@ -155,17 +155,17 @@ void ImprimirGrupo(IEnumerable<IGrouping<int, Game>> listaDeJuegos)
         Console.WriteLine($"Grupo: {grupo.Key}");
         foreach(var item in grupo)
         {
-            Console.WriteLine("{0, -40} {1, -20} {2, -30}", item.Titulo, item.Desarrollador, item.Editor );
+            Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma, item.Desarrollador, item.Editor );
         }
     }
 }
 
 void ImprimirDiccionario(ILookup<char, Game> listaDeJuegos, char letra)
 {
-    Console.WriteLine("{0, -40} {1, -20} {2, -30}\n", "Titulo", "Desarrollador", "Editor");
+    Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
     foreach(var item in listaDeJuegos[letra])
     {
-        Console.WriteLine("{0, -40} {1, -20} {2, -30}", item.Titulo, item.Desarrollador, item.Editor);
+        Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma, item.Desarrollador, item.Editor);
     }
 }
 
