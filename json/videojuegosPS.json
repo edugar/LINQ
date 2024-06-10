@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Final Fantasy VII",
+    "desarrollador": "Square",
+    "editor": "Sony Computer Entertainment",
+    "fecha_lanzamiento": "1997-01-31",
+    "genero": [ "RPG" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Metal Gear Solid",
+    "desarrollador": "Konami",
+    "editor": "Konami",
+    "fecha_lanzamiento": "1998-09-03",
+    "genero": [ "Acción", "Sigilo" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Crash Bandicoot",
+    "desarrollador": "Naughty Dog",
+    "editor": "Sony Computer Entertainment",
+    "fecha_lanzamiento": "1996-09-09",
+    "genero": [ "Plataformas" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Gran Turismo",
+    "desarrollador": "Polyphony Digital",
+    "editor": "Sony Computer Entertainment",
+    "fecha_lanzamiento": "1997-12-23",
+    "genero": [ "Carreras" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Resident Evil",
+    "desarrollador": "Capcom",
+    "editor": "Capcom",
+    "fecha_lanzamiento": "1996-03-22",
+    "genero": [ "Survival Horror" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Spyro the Dragon",
+    "desarrollador": "Insomniac Games",
+    "editor": "Sony Computer Entertainment",
+    "fecha_lanzamiento": "1998-09-10",
+    "genero": [ "Plataformas" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Tomb Raider",
+    "desarrollador": "Core Design",
+    "editor": "Eidos Interactive",
+    "fecha_lanzamiento": "1996-10-25",
+    "genero": [ "Acción", "Aventura" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Tekken 3",
+    "desarrollador": "Namco",
+    "editor": "Namco",
+    "fecha_lanzamiento": "1998-03-26",
+    "genero": [ "Lucha" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Silent Hill",
+    "desarrollador": "Konami",
+    "editor": "Konami",
+    "fecha_lanzamiento": "1999-02-23",
+    "genero": [ "Survival Horror" ],
+    "plataforma": [ "PlayStation" ]
+  },
+  {
+    "titulo": "Tony Hawk's Pro Skater",
+    "desarrollador": "Neversoft",
+    "editor": "Activision",
+    "fecha_lanzamiento": "1999-09-29",
+    "genero": [ "Deportes" ],
+    "plataforma": [ "PlayStation" ]
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Halo: Combat Evolved",
+    "desarrollador": "Bungie",
+    "editor": "Microsoft Game Studios",
+    "fecha_lanzamiento": "2001-11-15",
+    "genero": [ "FPS" ],
+    "plataforma": [ "Xbox" ]
+  },
+  {
+    "titulo": "Fable",
+    "desarrollador": "Lionhead Studios",
+    "editor": "Microsoft Game Studios",
+    "fecha_lanzamiento": "2004-09-14",
+    "genero": [ "RPG", "Acción" ],
+    "plataforma": [ "Xbox" ]
+  },
+  {
+    "titulo": "Gears of War",
+    "desarrollador": "Epic Games",
+    "editor": "Microsoft Game Studios",
+    "fecha_lanzamiento": "2006-11-07",
+    "genero": [ "TPS" ],
+    "plataforma": [ "Xbox 360" ]
+  },
+  {
+    "titulo": "The Elder Scrolls III: Morrowind",
+    "desarrollador": "Bethesda Game Studios",
+    "editor": "Bethesda Softworks",
+    "fecha_lanzamiento": "2002-06-06",
+    "genero": [ "RPG" ],
+    "plataforma": [ "Xbox", "PC" ]
+  },
+  {
+    "titulo": "Splinter Cell",
+    "desarrollador": "Ubisoft Montreal",
+    "editor": "Ubisoft",
+    "fecha_lanzamiento": "2002-11-17",
+    "genero": [ "Sigilo", "Acción" ],
+    "plataforma": [ "Xbox", "PlayStation 2", "PC" ]
+  },
+  {
+    "titulo": "Knights of the Old Republic",
+    "desarrollador": "BioWare",
+    "editor": "LucasArts",
+    "fecha_lanzamiento": "2003-07-16",
+    "genero": [ "RPG" ],
+    "plataforma": [ "Xbox", "PC" ]
+  },
+  {
+    "titulo": "Grand Theft Auto: San Andreas",
+    "desarrollador": "Rockstar North",
+    "editor": "Rockstar Games",
+    "fecha_lanzamiento": "2004-10-26",
+    "genero": [ "Acción", "Aventura" ],
+    "plataforma": [ "Xbox", "PlayStation 2", "PC" ]
+  },
+  {
+    "titulo": "Call of Duty 2",
+    "desarrollador": "Infinity Ward",
+    "editor": "Activision",
+    "fecha_lanzamiento": "2005-10-25",
+    "genero": [ "FPS" ],
+    "plataforma": [ "Xbox 360", "PC" ]
+  },
+  {
+    "titulo": "Burnout 3: Takedown",
+    "desarrollador": "Criterion Games",
+    "editor": "Electronic Arts",
+    "fecha_lanzamiento": "2004-09-07",
+    "genero": [ "Carreras" ],
+    "plataforma": [ "Xbox", "PlayStation 2" ]
+  },
+  {
+    "titulo": "Forza Motorsport",
+    "desarrollador": "Turn 10 Studios",
+    "editor": "Microsoft Game Studios",
+    "fecha_lanzamiento": "2005-05-03",
+    "genero": [ "Carreras" ],
+    "plataforma": [ "Xbox" ]
+  }
+]
