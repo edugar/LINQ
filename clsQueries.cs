@@ -37,6 +37,10 @@ namespace linq
         {
             return juegosPS;
         }
+        public IEnumerable<Game> JuegosXbox()
+        {
+            return juegosXBOX;
+        }
 
         //WHERE
         public IEnumerable<Game> linqWHERE(string Condicion)
