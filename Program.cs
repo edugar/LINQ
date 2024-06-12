@@ -1,8 +1,10 @@
 ﻿using linq;
+using static System.Net.Mime.MediaTypeNames;
 clsQueries consultas = new clsQueries();
 menu();
 bool final = false;
 int seleccion = 0;
+string condicion = string.Empty;
 while (!final)
 {
     seleccion = Convert.ToInt32(Console.ReadLine());
@@ -10,11 +12,19 @@ while (!final)
     {
         case 1:
             Console.WriteLine("SELECT");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Escribe el nombre del juego de PlayStation que quieres buscar: ");
+            condicion = Console.ReadLine();
+            ImprimirLista(consultas.linqWHERE(condicion));
+            Console.ReadLine();
+            menu();
             break;
         case 2:
             Console.WriteLine("CONTAINS");
-            ImprimirLista(consultas.ConsultaXBOX());
+            Console.Write("Escribe el nombre de la plataforma que quieres buscar: ");
+            condicion = Console.ReadLine();
+            ImprimirLista(consultas.linqContains(condicion));
+            Console.ReadLine();
+            menu();
             break;
         case 3:
             Console.WriteLine("ALL");
@@ -140,10 +150,10 @@ void menu()
 
 void ImprimirLista(IEnumerable<Game> listaDeJuegos)
 {
-    Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
+    Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
     foreach (var item in listaDeJuegos)
     {
-        Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma[0], item.Desarrollador, item.Editor);
+        Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor);
     }
 }
 
@@ -155,17 +165,17 @@ void ImprimirGrupo(IEnumerable<IGrouping<int, Game>> listaDeJuegos)
         Console.WriteLine($"Grupo: {grupo.Key}");
         foreach(var item in grupo)
         {
-            Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma, item.Desarrollador, item.Editor );
+            Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor );
         }
     }
 }
 
 void ImprimirDiccionario(ILookup<char, Game> listaDeJuegos, char letra)
 {
-    Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
+    Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
     foreach(var item in listaDeJuegos[letra])
     {
-        Console.WriteLine("{0, -30} {1, -20} {2, -20} {3, -30}", item.Titulo, item.Plataforma, item.Desarrollador, item.Editor);
+        Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor);
     }
 }
 

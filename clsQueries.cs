@@ -39,15 +39,30 @@ namespace linq
         }
 
         //WHERE
-        public IEnumerable<Game> ConsultaXBOX()
+        public IEnumerable<Game> linqWHERE(string Condicion)
         {
-            //extension method
-            return juegosXBOX.Where(p=> p.Plataforma.Contains("Xbox 360"));
+            IEnumerable<Game> result;
+            //Method syntax
+            result =  juegosPS.Where(p=> p.Titulo == Condicion);
 
-            //query expresion
+            //Query syntax
+            //result = from g in juegosPS where g.Titulo == Condicion select g;
+
+            return result;
         }
 
         //CONTAINS
+        public IEnumerable<Game> linqContains(string Condicion)
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosXBOX.Where(p => p.Plataforma.Contains(Condicion));
+
+            //Query syntax
+            //result = from p in juegosXBOX where p.Plataforma.Contains(Condicion) select p;
+
+            return result;
+        }
 
         //ALL
 
