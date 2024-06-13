@@ -28,11 +28,19 @@ while (!final)
             break;
         case 3:
             Console.WriteLine("ALL");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Escribe una plataforma: ");
+            condicion = Console.ReadLine();
+            Console.WriteLine($"Todos los juegos son de esta plataforma {condicion}? - {consultas.linqAll(condicion)}");
+            Console.ReadLine();
+            menu();
             break;
         case 4:
             Console.WriteLine("ANY");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Escribe un año de publicaicon: ");
+            condicion = Console.ReadLine();
+            Console.WriteLine($"Algun videojuego fue publicado en el año {condicion}? - {consultas.linqAny(condicion)}");
+            Console.ReadLine();
+            menu();
             break;
         case 5:
             Console.WriteLine("ORDER BY");

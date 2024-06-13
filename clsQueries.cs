@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace linq
 {
@@ -50,7 +51,7 @@ namespace linq
             result =  juegosPS.Where(p=> p.Titulo == Condicion);
 
             //Query syntax
-            //result = from g in juegosPS where g.Titulo == Condicion select g;
+            //result = from p in juegosPS where p.Titulo == Condicion select p;
 
             return result;
         }
@@ -69,8 +70,29 @@ namespace linq
         }
 
         //ALL
+        public bool linqAll(string Condicion)
+        {
+            bool result;
+            //Method syntax
+            result = juegosXBOX.All(p => p.Plataforma.Contains(Condicion));
+
+            //Query syntax
+            //result = (from p in juegosXBOX select p).All(p => p.Plataforma.Contains(Condicion));
+
+            return result;
+        }
 
         //ANY
+        public bool linqAny(string Condicion){
+            bool result;
+            //Method syntax
+            result = juegosXBOX.Any(p => p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion));
+
+            //Query syntax
+            //result = (from p in juegosXBOX where p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion) select p).Any();
+
+            return result;
+        }
 
         //ORDER BY
 

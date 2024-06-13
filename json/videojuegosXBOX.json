@@ -21,7 +21,7 @@
     "editor": "Microsoft Game Studios",
     "fecha_lanzamiento": "2006-11-07",
     "genero": [ "TPS" ],
-    "plataforma": [ "Xbox 360" ]
+    "plataforma": [ "Xbox", "Xbox 360" ]
   },
   {
     "titulo": "The Elder Scrolls III: Morrowind",
@@ -61,7 +61,7 @@
     "editor": "Activision",
     "fecha_lanzamiento": "2005-10-25",
     "genero": [ "FPS" ],
-    "plataforma": [ "Xbox 360", "PC" ]
+    "plataforma": [ "Xbox", "Xbox 360", "PC" ]
   },
   {
     "titulo": "Burnout 3: Takedown",
