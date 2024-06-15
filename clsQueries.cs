@@ -95,7 +95,17 @@ namespace linq
         }
 
         //ORDER BY
+        public IEnumerable<Game> linqOrderBy(string Condicion)
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosXBOX.Where(p => p.Editor.Contains(Condicion)).OrderBy(p => p.Titulo);
 
+            //Query syntax
+            result = from p in juegosXBOX where p.Editor.Contains(Condicion) orderby p.Titulo select p;
+
+            return result;
+        }
         //ORDER BY DESCENDING
 
         //TAKE

@@ -44,7 +44,12 @@ while (!final)
             break;
         case 5:
             Console.WriteLine("ORDER BY");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine("CONTAINS");
+            Console.Write("Escribe el nombre del titulo que quieres buscar: ");
+            condicion = Console.ReadLine();
+            ImprimirLista(consultas.linqOrderBy(condicion));
+            Console.ReadLine();
+            menu();
             break;
         case 6:
             Console.WriteLine("ORDER BY DESCENDING");
