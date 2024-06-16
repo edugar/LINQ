@@ -95,28 +95,95 @@ namespace linq
         }
 
         //ORDER BY
-        public IEnumerable<Game> linqOrderBy(string Condicion)
+        public IEnumerable<Game> linqOrderBy()
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosXBOX.Where(p => p.Editor.Contains(Condicion)).OrderBy(p => p.Titulo);
+            result = juegosXBOX.OrderBy(p => p.Titulo);
 
             //Query syntax
-            result = from p in juegosXBOX where p.Editor.Contains(Condicion) orderby p.Titulo select p;
+            result = from p in juegosXBOX orderby p.Titulo select p;
 
             return result;
         }
+
         //ORDER BY DESCENDING
+        public IEnumerable<Game> linqOrderByDescending()
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosXBOX.OrderByDescending(p => p.Titulo);
+
+            //Query syntax
+            result = from p in juegosXBOX orderby p.Titulo descending select p;
+
+            return result;
+        }
 
         //TAKE
+        public IEnumerable<Game> linqTake()
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosPS.Take(3).ToList();
+
+            //Query syntax
+            result = (from p in juegosPS orderby p.Titulo select p).Take(3);
+
+            return result;
+        }
 
         //SKIP
+        public IEnumerable<Game> linqSkip()
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosPS.OrderBy(p => p.Titulo).Skip(5);
+
+            //Query syntax
+            result = (from p in juegosPS orderby p.Titulo select p).Skip(5);
+
+            return result;
+        }
 
         //SELECT
+        public IEnumerable<Game> linqSelect()
+        {
+            IEnumerable<Game> result;
+            //Method syntax
+            result = juegosPS.Select(p => new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador = "Method Syntax" });
+
+            //Query syntax
+            result = from p in juegosPS select new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador  = "Query Syntax" };
+
+            return result;
+        }
 
         //COUNT
+        public int linqCount()
+        {
+            int result;
+            //Method syntax
+            result = juegosPS.Count();
+
+            //Query syntax
+            result = (from p in juegosPS select p).Count();
+
+            return result;
+        }
 
         //LONG COUNT
+        public long linqLongCount()
+        {
+            long result;
+            //Method syntax
+            result = juegosPS.LongCount();
+
+            //Query syntax
+            result = (from p in juegosPS select p).LongCount();
+
+            return result;
+        }
 
         //MIN
 

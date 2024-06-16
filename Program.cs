@@ -44,32 +44,43 @@ while (!final)
             break;
         case 5:
             Console.WriteLine("ORDER BY");
-            Console.WriteLine("CONTAINS");
-            Console.Write("Escribe el nombre del titulo que quieres buscar: ");
-            condicion = Console.ReadLine();
-            ImprimirLista(consultas.linqOrderBy(condicion));
+            Console.Write("Los juegos se ordenan de forma ascendente");
+            ImprimirLista(consultas.linqOrderBy());
             Console.ReadLine();
             menu();
             break;
         case 6:
             Console.WriteLine("ORDER BY DESCENDING");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Los juegos se ordenan de forma descendente");
+            ImprimirLista(consultas.linqOrderByDescending());
+            Console.ReadLine();
+            menu();
             break;
         case 7:
             Console.WriteLine("TAKE");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("La lista tomara los primeros tres registros");
+            ImprimirLista(consultas.linqTake());
+            Console.ReadLine();
+            menu();
             break;
         case 8:
             Console.WriteLine("SKIP");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Los juegos se brincara los primeros 5 registros");
+            ImprimirLista(consultas.linqSkip());
+            Console.ReadLine();
+            menu();
             break;
         case 9:
             Console.WriteLine("COUNT");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine($"Numero de registros de una tabla int - {consultas.linqCount()}");
+            Console.ReadLine();
+            menu();
             break;
         case 10:
             Console.WriteLine("COUNT LONG");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine($"Numero de registros de una tabla long - {consultas.linqLongCount()}");
+            Console.ReadLine();
+            menu();
             break;
         case 11:
             Console.WriteLine("MIN");
