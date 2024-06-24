@@ -12,35 +12,35 @@ namespace linq
 {
     internal class clsQueries
     {
-        private List<Game> juegosPS = new List<Game>();
-        private List<Game> juegosXBOX = new List<Game>();
+        private List<Game> videojuegos = new List<Game>();
+        private List<User> usuarios = new List<User>();
 
         public clsQueries() 
         {
-            string relativePath = "json/videojuegosPS.json";
+            string relativePath = "json/videojuegos.json";
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
 
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string json = reader.ReadToEnd();
-                this.juegosPS = JsonSerializer.Deserialize<List<Game>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                this.videojuegos = JsonSerializer.Deserialize<List<Game>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
             }
 
-            using(StreamReader reader = new StreamReader("json/videojuegosXBOX.json"))
+            using(StreamReader reader = new StreamReader("json/usuarios.json"))
             {
                 string json = reader.ReadToEnd();
-                this.juegosXBOX = JsonSerializer.Deserialize<List<Game>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                this.usuarios = JsonSerializer.Deserialize<List<User>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             }
         }
 
-        public IEnumerable<Game> JuegosPS()
+        public IEnumerable<Game> VideoJuegos()
         {
-            return juegosPS;
+            return videojuegos;
         }
-        public IEnumerable<Game> JuegosXbox()
+        public IEnumerable<User> Usuarios()
         {
-            return juegosXBOX;
+            return usuarios;
         }
 
         //WHERE
@@ -48,10 +48,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result =  juegosPS.Where(p=> p.Titulo == Condicion);
+            result = videojuegos.Where(p=> p.Titulo == Condicion);
 
             //Query syntax
-            //result = from p in juegosPS where p.Titulo == Condicion select p;
+            result = from p in videojuegos where p.Titulo == Condicion select p;
 
             return result;
         }
@@ -61,10 +61,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosXBOX.Where(p => p.Plataforma.Contains(Condicion));
+            result = videojuegos.Where(p => p.Titulo.Contains(Condicion));
 
             //Query syntax
-            //result = from p in juegosXBOX where p.Plataforma.Contains(Condicion) select p;
+            result = from p in videojuegos where p.Titulo.Contains(Condicion) select p;
 
             return result;
         }
@@ -74,10 +74,10 @@ namespace linq
         {
             bool result;
             //Method syntax
-            result = juegosXBOX.All(p => p.Plataforma.Contains(Condicion));
+            result = videojuegos.All(p => p.Plataforma.Contains(Condicion));
 
             //Query syntax
-            //result = (from p in juegosXBOX select p).All(p => p.Plataforma.Contains(Condicion));
+            result = (from p in videojuegos select p).All(p => p.Plataforma.Contains(Condicion));
 
             return result;
         }
@@ -86,10 +86,10 @@ namespace linq
         public bool linqAny(string Condicion){
             bool result;
             //Method syntax
-            result = juegosXBOX.Any(p => p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion));
+            result = videojuegos.Any(p => p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion));
 
             //Query syntax
-            //result = (from p in juegosXBOX where p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion) select p).Any();
+            result = (from p in videojuegos where p.Fecha_lanzamiento.Year == Convert.ToInt32(Condicion) select p).Any();
 
             return result;
         }
@@ -99,10 +99,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosXBOX.OrderBy(p => p.Titulo);
+            result = videojuegos.OrderBy(p => p.Titulo);
 
             //Query syntax
-            result = from p in juegosXBOX orderby p.Titulo select p;
+            result = from p in videojuegos orderby p.Titulo select p;
 
             return result;
         }
@@ -112,10 +112,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosXBOX.OrderByDescending(p => p.Titulo);
+            result = videojuegos.OrderByDescending(p => p.Titulo);
 
             //Query syntax
-            result = from p in juegosXBOX orderby p.Titulo descending select p;
+            result = from p in videojuegos orderby p.Titulo descending select p;
 
             return result;
         }
@@ -125,10 +125,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosPS.Take(3).ToList();
+            result = videojuegos.Take(3).ToList();
 
             //Query syntax
-            result = (from p in juegosPS orderby p.Titulo select p).Take(3);
+            result = (from p in videojuegos orderby p.Titulo select p).Take(3);
 
             return result;
         }
@@ -138,10 +138,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosPS.OrderBy(p => p.Titulo).Skip(5);
+            result = videojuegos.OrderBy(p => p.Titulo).Skip(5);
 
             //Query syntax
-            result = (from p in juegosPS orderby p.Titulo select p).Skip(5);
+            result = (from p in videojuegos orderby p.Titulo select p).Skip(5);
 
             return result;
         }
@@ -151,10 +151,10 @@ namespace linq
         {
             IEnumerable<Game> result;
             //Method syntax
-            result = juegosPS.Select(p => new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador = "Method Syntax" });
+            result = videojuegos.Select(p => new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador = "Method Syntax" });
 
             //Query syntax
-            result = from p in juegosPS select new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador  = "Query Syntax" };
+            result = from p in videojuegos select new Game { Titulo = p.Titulo, Plataforma = p.Plataforma, Desarrollador  = "Query Syntax" };
 
             return result;
         }
@@ -164,10 +164,10 @@ namespace linq
         {
             int result;
             //Method syntax
-            result = juegosPS.Count();
+            result = videojuegos.Count();
 
             //Query syntax
-            result = (from p in juegosPS select p).Count();
+            result = (from p in videojuegos select p).Count();
 
             return result;
         }
@@ -177,31 +177,154 @@ namespace linq
         {
             long result;
             //Method syntax
-            result = juegosPS.LongCount();
+            result = videojuegos.LongCount();
 
             //Query syntax
-            result = (from p in juegosPS select p).LongCount();
+            result = (from p in videojuegos select p).LongCount();
 
             return result;
         }
 
         //MIN
+        public decimal linqMin()
+        {
+            decimal result;
+            //Method syntax
+            result = videojuegos.Min(p => p.Calificacion);
 
-        //MAX
+            //Query syntax
+            result = (from p in videojuegos select p.Calificacion).Min();
+
+            return result;
+        }
 
         //MIN BY
+        public User linqMinBy()
+        {
+            User result;
+            //Method syntax
+            result = usuarios.MinBy(p => p.Edad);
 
+            //Query syntax
+            result = (from p in usuarios select p).MinBy(q => q.Edad);
+
+            return result;
+        }
+
+        //MAX
+        public decimal linqMax()
+        {
+            decimal result;
+            //Method syntax
+            result = videojuegos.Max(p => p.Calificacion);
+
+            //Query syntax
+            result = (from p in videojuegos select p.Calificacion).Max();
+
+            return result;
+        }
         //MAX BY
+        public User linqMaxBy()
+        {
+            User result;
+            //Method syntax
+            result = usuarios.MaxBy(p => p.Edad);
+
+            //Query syntax
+            result = (from p in usuarios select p).MaxBy(q => q.Edad);
+
+            return result;
+        }
 
         //SUM
+        public int linqSum(String Condicion)
+        {
+            var totalHoras = 0;
+            //Method syntax
+            totalHoras = usuarios.Where(p => p.Juegos_Favoritos.Contains(Condicion)).Sum(q => q.Horas_Jugadas_Semana);
+
+            //Query syntax
+            totalHoras = (from p in usuarios where p.Juegos_Favoritos.Contains(Condicion) select p).Sum(q => q.Horas_Jugadas_Semana);
+
+            return totalHoras;
+        }
 
         //AGERGGATE
+        public string linqAggregate(string Condicion)
+        {
+            var juegos = string.Empty;
+            //Method syntax
+            juegos = videojuegos
+            .Where(p => p.Plataforma.Contains(Condicion))
+            .Aggregate("\n", (titulosLibros, next) =>
+            {
+                if (titulosLibros != string.Empty)
+                {
+                    titulosLibros += " \n " + next.Titulo;
+                }
+                else
+                {
+                    titulosLibros += next.Titulo;
+                }
+                return titulosLibros;
+            });
+
+            //Query syntax
+            juegos = (from p in videojuegos where p.Plataforma.Contains(Condicion) select p)
+            .Aggregate("\n", (titulosLibros, next) =>
+            {
+                if (titulosLibros != string.Empty)
+                {
+                    titulosLibros += " \n " + next.Titulo;
+                }
+                else
+                {
+                    titulosLibros += next.Titulo;
+                }
+                return titulosLibros;
+            });
+
+            return juegos;
+        }
 
         //AVERAGE
+        public double linqAverage()
+        {
+            double Media = 0;
+            //Method syntax
+            Media = usuarios.Average(p => p.Edad);
+
+            //Query syntax
+            Media = (from p in usuarios select p).Average(p => p.Edad);
+
+            return Media;
+        }
 
         //GROUP BY
+        public IEnumerable<IGrouping<int, Game>> linqGroupBy()
+        {
+            IEnumerable<IGrouping<int, Game>> result;
+            //query method
+            result = videojuegos.GroupBy(p => p.Fecha_lanzamiento.Year);
+
+            //query expresion
+            result =  (from p in videojuegos select p).GroupBy(q => q.Fecha_lanzamiento.Year);
+
+            return result;
+        }
 
         //LOOKUP
+        public ILookup<char, Game> linqToLookup()
+        {
+            ILookup<char, Game> result;
+            //query method
+            result = videojuegos.OrderBy(p => p.Titulo).ToLookup(p => p.Titulo[0], p => p);
+
+            //query expresion
+            result =(from p in videojuegos orderby p.Titulo select p).ToLookup(p=> p.Titulo[0], p=> p);
+
+            return result;
+        }
 
         //JOIN
 

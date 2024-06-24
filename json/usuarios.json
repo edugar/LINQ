@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "nombre_usuario": "GamerPro123",
+    "edad": 25,
+    "pais": "Estados Unidos",
+    "juegos_favoritos": [ "The Legend of Zelda: Breath of the Wild", "The Witcher 3: Wild Hunt" ],
+    "horas_jugadas_semana": 20,
+    "miembro_desde": "2015-06-15",
+    "logros": [ "Maestro de Espadas", "Cazador de Monstruos" ],
+    "descripcion": "Apasionado de los juegos de mundo abierto y RPGs."
+  },
+  {
+    "id": 2,
+    "nombre_usuario": "PixelWarrior",
+    "edad": 30,
+    "pais": "Reino Unido",
+    "juegos_favoritos": [ "Minecraft", "Fortnite" ],
+    "horas_jugadas_semana": 15,
+    "miembro_desde": "2017-03-22",
+    "logros": [ "Constructor Maestro", "Rey de la Colina" ],
+    "descripcion": "Amo la creatividad en Minecraft y la emoción de Fortnite."
+  },
+  {
+    "id": 3,
+    "nombre_usuario": "RedDeadFan",
+    "edad": 28,
+    "pais": "Canadá",
+    "juegos_favoritos": [ "Red Dead Redemption 2", "God of War" ],
+    "horas_jugadas_semana": 25,
+    "miembro_desde": "2018-11-05",
+    "logros": [ "Forajido Legendario", "Dios de la Guerra" ],
+    "descripcion": "Me encantan las historias profundas y los gráficos impresionantes."
+  },
+  {
+    "id": 4,
+    "nombre_usuario": "MarioLover",
+    "edad": 22,
+    "pais": "Japón",
+    "juegos_favoritos": [ "Super Mario Odyssey", "Animal Crossing: New Horizons" ],
+    "horas_jugadas_semana": 10,
+    "miembro_desde": "2016-09-10",
+    "logros": [ "Estrella de Plata", "Isla de Ensueño" ],
+    "descripcion": "Fanático de Nintendo desde la infancia."
+  },
+  {
+    "id": 5,
+    "nombre_usuario": "ShooterKing",
+    "edad": 27,
+    "pais": "Alemania",
+    "juegos_favoritos": [ "Overwatch", "Call of Duty" ],
+    "horas_jugadas_semana": 30,
+    "miembro_desde": "2014-02-14",
+    "logros": [ "Héroe Supremo", "Tirador Experto" ],
+    "descripcion": "Competitivo y siempre buscando mejorar en shooters."
+  },
+  {
+    "id": 6,
+    "nombre_usuario": "CyberNinja",
+    "edad": 24,
+    "pais": "Australia",
+    "juegos_favoritos": [ "Cyberpunk 2077", "Deus Ex" ],
+    "horas_jugadas_semana": 18,
+    "miembro_desde": "2019-05-21",
+    "logros": [ "Nómada Urbano", "Hacker Supremo" ],
+    "descripcion": "Fan de la ciencia ficción y los RPGs futuristas."
+  },
+  {
+    "id": 7,
+    "nombre_usuario": "DragonSlayer",
+    "edad": 35,
+    "pais": "Francia",
+    "juegos_favoritos": [ "The Witcher 3: Wild Hunt", "Skyrim" ],
+    "horas_jugadas_semana": 22,
+    "miembro_desde": "2013-07-19",
+    "logros": [ "Asesino de Dragones", "Maestro Hechicero" ],
+    "descripcion": "Disfruto de los juegos de fantasía épica y RPGs profundos."
+  },
+  {
+    "id": 8,
+    "nombre_usuario": "CraftMaster",
+    "edad": 21,
+    "pais": "Brasil",
+    "juegos_favoritos": [ "Minecraft", "Terraria" ],
+    "horas_jugadas_semana": 25,
+    "miembro_desde": "2016-12-01",
+    "logros": [ "Arquitecto Supremo", "Creador de Mundos" ],
+    "descripcion": "Amo construir y explorar en mundos sandbox."
+  },
+  {
+    "id": 9,
+    "nombre_usuario": "RogueAgent",
+    "edad": 29,
+    "pais": "Italia",
+    "juegos_favoritos": [ "Fortnite", "Call of Duty" ],
+    "horas_jugadas_semana": 35,
+    "miembro_desde": "2018-01-30",
+    "logros": [ "Agente Encubierto", "Francotirador Experto" ],
+    "descripcion": "Fan de los shooters tácticos y el juego en equipo."
+  },
+  {
+    "id": 10,
+    "nombre_usuario": "WildWestHero",
+    "edad": 26,
+    "pais": "México",
+    "juegos_favoritos": [ "Red Dead Redemption 2", "The Witcher 3: Wild Hunt" ],
+    "horas_jugadas_semana": 28,
+    "miembro_desde": "2017-05-15",
+    "logros": [ "Pistolero Legendario", "Cazador de Monstruos" ],
+    "descripcion": "Me encanta la narrativa y los mundos abiertos en los videojuegos."
+  },
+  {
+    "id": 11,
+    "nombre_usuario": "PixelArtisan",
+    "edad": 23,
+    "pais": "España",
+    "juegos_favoritos": [ "Super Mario Odyssey", "Animal Crossing: New Horizons" ],
+    "horas_jugadas_semana": 12,
+    "miembro_desde": "2015-11-25",
+    "logros": [ "Artista de Pixeles", "Arquitecto Insular" ],
+    "descripcion": "Disfruto de los juegos coloridos y creativos."
+  },
+  {
+    "id": 12,
+    "nombre_usuario": "SniperElite",
+    "edad": 31,
+    "pais": "Rusia",
+    "juegos_favoritos": [ "Overwatch", "Fortnite" ],
+    "horas_jugadas_semana": 40,
+    "miembro_desde": "2016-03-12",
+    "logros": [ "Tirador Élite", "Campeón de Battle Royale" ],
+    "descripcion": "Apasionado por los juegos de disparos y la competencia en línea."
+  },
+  {
+    "id": 13,
+    "nombre_usuario": "NordicWarrior",
+    "edad": 27,
+    "pais": "Suecia",
+    "juegos_favoritos": [ "God of War", "The Witcher 3: Wild Hunt" ],
+    "horas_jugadas_semana": 20,
+    "miembro_desde": "2014-08-07",
+    "logros": [ "Guerrero Nórdico", "Cazador de Bestias" ],
+    "descripcion": "Me fascina la mitología y las aventuras épicas."
+  },
+  {
+    "id": 14,
+    "nombre_usuario": "IslandDreamer",
+    "edad": 22,
+    "pais": "Nueva Zelanda",
+    "juegos_favoritos": [ "Animal Crossing: New Horizons", "Stardew Valley" ],
+    "horas_jugadas_semana": 15,
+    "miembro_desde": "2019-02-10",
+    "logros": [ "Isla de Ensueño", "Granjero Experto" ],
+    "descripcion": "Disfruto de los juegos relajantes y de simulación."
+  },
+  {
+    "id": 15,
+    "nombre_usuario": "TechWizard",
+    "edad": 28,
+    "pais": "India",
+    "juegos_favoritos": [ "Cyberpunk 2077", "Deus Ex" ],
+    "horas_jugadas_semana": 18,
+    "miembro_desde": "2018-04-23",
+    "logros": [ "Mago Tecnológico", "Hackeador Supremo" ],
+    "descripcion": "Fanático de los RPGs y las historias de ciencia ficción."
+  },
+  {
+    "id": 16,
+    "nombre_usuario": "BattleMaster",
+    "edad": 32,
+    "pais": "Corea del Sur",
+    "juegos_favoritos": [ "Fortnite", "Overwatch" ],
+    "horas_jugadas_semana": 35,
+    "miembro_desde": "2015-09-18",
+    "logros": [ "Maestro de Batalla", "Héroe Legendario" ],
+    "descripcion": "Competitivo en los juegos de disparos y estrategia en equipo."
+  }
+]
