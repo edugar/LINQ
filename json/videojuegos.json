@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "titulo": "The Legend of Zelda: Breath of the Wild",
+    "desarrollador": "Nintendo",
+    "fecha_lanzamiento": "2017-03-03",
+    "plataforma": [ "Nintendo Switch", "Wii U" ],
+    "genero": "Acción/Aventura",
+    "precio": 59.99,
+    "calificacion": 97,
+    "modos_juego": [ "Un jugador" ],
+    "descripcion": "Explora el vasto mundo de Hyrule y derrota a Ganon."
+  },
+  {
+    "id": 2,
+    "titulo": "The Witcher 3: Wild Hunt",
+    "desarrollador": "CD Projekt Red",
+    "fecha_lanzamiento": "2015-05-19",
+    "plataforma": [ "PC", "PS4", "Xbox One", "Nintendo Switch" ],
+    "genero": "RPG",
+    "precio": 49.99,
+    "calificacion": 93,
+    "modos_juego": [ "Un jugador" ],
+    "descripcion": "Sigue la historia de Geralt de Rivia en un mundo abierto lleno de peligros."
+  },
+  {
+    "id": 3,
+    "titulo": "Minecraft",
+    "desarrollador": "Mojang",
+    "fecha_lanzamiento": "2011-11-18",
+    "plataforma": [ "PC", "PS4", "Xbox One", "Nintendo Switch", "Mobile" ],
+    "genero": "Sandbox",
+    "precio": 26.95,
+    "calificacion": 93,
+    "modos_juego": [ "Un jugador", "Multijugador" ],
+    "descripcion": "Construye y explora mundos generados aleatoriamente."
+  },
+  {
+    "id": 4,
+    "titulo": "Fortnite",
+    "desarrollador": "Epic Games",
+    "fecha_lanzamiento": "2017-07-25",
+    "plataforma": [ "PC", "PS4", "Xbox One", "Nintendo Switch", "Mobile" ],
+    "genero": "Battle Royale",
+    "precio": 0.00,
+    "calificacion": 82,
+    "modos_juego": [ "Multijugador" ],
+    "descripcion": "Compite en el último hombre en pie en este juego de disparos."
+  },
+  {
+    "id": 5,
+    "titulo": "Red Dead Redemption 2",
+    "desarrollador": "Rockstar Games",
+    "fecha_lanzamiento": "2018-10-26",
+    "plataforma": [ "PC", "PS4", "Xbox One" ],
+    "genero": "Acción/Aventura",
+    "precio": 59.99,
+    "calificacion": 96,
+    "modos_juego": [ "Un jugador", "Multijugador" ],
+    "descripcion": "Explora el Salvaje Oeste en esta épica historia de forajidos."
+  },
+  {
+    "id": 6,
+    "titulo": "Super Mario Odyssey",
+    "desarrollador": "Nintendo",
+    "fecha_lanzamiento": "2017-10-27",
+    "plataforma": [ "Nintendo Switch" ],
+    "genero": "plataformas",
+    "precio": 59.99,
+    "calificacion": 97,
+    "modos_juego": [ "Un jugador", "Multijugador" ],
+    "descripcion": "Únete a Mario en una aventura global para rescatar a la Princesa Peach."
+  },
+  {
+    "id": 7,
+    "titulo": "Overwatch",
+    "desarrollador": "Blizzard Entertainment",
+    "fecha_lanzamiento": "2016-05-24",
+    "plataforma": [ "PC", "PS4", "Xbox One", "Nintendo Switch" ],
+    "genero": "FPS",
+    "precio": 39.99,
+    "calificacion": 91,
+    "modos_juego": [ "Multijugador" ],
+    "descripcion": "Compite en este shooter en equipos con héroes únicos."
+  },
+  {
+    "id": 8,
+    "titulo": "God of War",
+    "desarrollador": "Santa Monica Studio",
+    "fecha_lanzamiento": "2018-04-20",
+    "plataforma": [ "PS4", "PC" ],
+    "genero": "Acción/Aventura",
+    "precio": 49.99,
+    "calificacion": 94,
+    "modos_juego": [ "Un jugador" ],
+    "descripcion": "Acompaña a Kratos y su hijo Atreus en un viaje épico en la mitología nórdica."
+  },
+  {
+    "id": 9,
+    "titulo": "Animal Crossing: New Horizons",
+    "desarrollador": "Nintendo",
+    "fecha_lanzamiento": "2020-03-20",
+    "plataforma": [ "Nintendo Switch" ],
+    "genero": "Simulación",
+    "precio": 59.99,
+    "calificacion": 90,
+    "modos_juego": [ "Un jugador", "Multijugador" ],
+    "descripcion": "Crea tu propia isla paradisíaca y disfruta de la vida en un entorno relajante."
+  },
+  {
+    "id": 10,
+    "titulo": "Cyberpunk 2077",
+    "desarrollador": "CD Projekt Red",
+    "fecha_lanzamiento": "2020-12-10",
+    "plataforma": [ "PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S" ],
+    "genero": "RPG",
+    "precio": 59.99,
+    "calificacion": 76,
+    "modos_juego": [ "Un jugador" ],
+    "descripcion": "Adéntrate en el oscuro futuro de Night City y vive una historia intensa y compleja."
+  }
+]

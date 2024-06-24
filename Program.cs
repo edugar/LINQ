@@ -1,4 +1,5 @@
 ﻿using linq;
+using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 clsQueries consultas = new clsQueries();
 menu();
@@ -12,7 +13,7 @@ while (!final)
     {
         case 1:
             Console.WriteLine("SELECT");
-            Console.Write("Escribe el nombre del juego de PlayStation que quieres buscar: ");
+            Console.Write("Buscar por juego: ");
             condicion = Console.ReadLine();
             ImprimirLista(consultas.linqWHERE(condicion));
             Console.ReadLine();
@@ -20,7 +21,7 @@ while (!final)
             break;
         case 2:
             Console.WriteLine("CONTAINS");
-            Console.Write("Escribe el nombre de la plataforma que quieres buscar: ");
+            Console.Write("El titulo del juego contiene: ");
             condicion = Console.ReadLine();
             ImprimirLista(consultas.linqContains(condicion));
             Console.ReadLine();
@@ -84,51 +85,74 @@ while (!final)
             break;
         case 11:
             Console.WriteLine("MIN");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine($"La calificacion menor es - {consultas.linqMin()}");
+            Console.ReadLine();
+            menu();
             break;
         case 12:
             Console.WriteLine("MIN BY");
-            ImprimirLista(consultas.JuegosPS());
+            var userMin = consultas.linqMinBy();
+            Console.WriteLine($"El jugador mas joven es: {userMin.Nombre_Usuario} con {userMin.Edad} años");
+            Console.ReadLine();
+            menu();
             break;
         case 13:
             Console.WriteLine("MAX");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine($"La mayor calificacion es - {consultas.linqMin()}");
+            Console.ReadLine();
+            menu();
             break;
         case 14:
             Console.WriteLine("MAX BY");
-            ImprimirLista(consultas.JuegosPS());
+            var userMax = consultas.linqMinBy();
+            Console.WriteLine($"El jugador mas viejo es: {userMax.Nombre_Usuario} con {userMax.Edad} años");
+            Console.ReadLine();
+            menu();
             break;
         case 15:
             Console.WriteLine("SUM");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Juego favorito: ");
+            condicion = Console.ReadLine();
+            Console.WriteLine($"Numero de horas jugadas por semana cuando el juego favorito es {condicion} son {consultas.linqSum(condicion)} horas");
+            Console.ReadLine();
+            menu();
             break;
         case 16:
             Console.WriteLine("AGREGGATE");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Plataforma: ");
+            condicion = Console.ReadLine();
+            Console.WriteLine($"Juegos de la plataforma: {condicion} son: {consultas.linqAggregate(condicion)}");
+            Console.ReadLine();
+            menu();
             break;
         case 17:
             Console.WriteLine("AVERAGE");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine($"La edad media de los usuarios es: {consultas.linqAverage()}");
+            Console.ReadLine();
+            menu();
             break;
         case 18:
             Console.WriteLine("GROUP BY");
-            ImprimirLista(consultas.JuegosPS());
+            Console.Write("Juegos agrupados por año de lanzamiento: \n");
+            ImprimirGrupo(consultas.linqGroupBy());
             break;
         case 19:
-            Console.WriteLine("LOOKUP");
-            ImprimirLista(consultas.JuegosPS());
+            Console.WriteLine("TOLOOKUP");
+            Console.Write("Juegos agrupados por alfabeto: \n");
+            var diccionarioLookUp = consultas.linqToLookup();
+            ImprimirDiccionario(diccionarioLookUp);
             break;
         case 20:
             Console.WriteLine("INNER JOIN");
-            ImprimirLista(consultas.JuegosPS());
+            ImprimirLista(consultas.VideoJuegos());
             break;
         case 21:
             Console.WriteLine("LEFT JOIN");
-            ImprimirLista(consultas.JuegosPS());
+            ImprimirLista(consultas.VideoJuegos());
             break;
         case 22:
             Console.WriteLine("RIGTH JOIN");
-            ImprimirLista(consultas.JuegosPS());
+            ImprimirLista(consultas.VideoJuegos());
             break;
         case 23:
             Console.WriteLine("LIMPIAR");
@@ -139,7 +163,7 @@ while (!final)
 }
 
 //Todos los juegos de playstation
-ImprimirLista(consultas.JuegosPS());
+ImprimirLista(consultas.VideoJuegos());
 void menu()
 {
     //Menu
@@ -174,10 +198,10 @@ void menu()
 
 void ImprimirLista(IEnumerable<Game> listaDeJuegos)
 {
-    Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
+    Console.WriteLine("{0, -35} {1, -50} {2, -25} {3, -25}\n", "Titulo", "Plataforma", "Desarrollador", "Genero");
     foreach (var item in listaDeJuegos)
     {
-        Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor);
+        Console.WriteLine("{0, -35} {1, -50} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Genero);
     }
 }
 
@@ -189,17 +213,18 @@ void ImprimirGrupo(IEnumerable<IGrouping<int, Game>> listaDeJuegos)
         Console.WriteLine($"Grupo: {grupo.Key}");
         foreach(var item in grupo)
         {
-            Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor );
+            Console.WriteLine("{0, -35} {1, -50} {2, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Calificacion);
         }
     }
 }
 
-void ImprimirDiccionario(ILookup<char, Game> listaDeJuegos, char letra)
+void ImprimirDiccionario(ILookup<char, Game> listaDeJuegos)
 {
-    Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}\n", "Titulo", "Plataforma", "Desarrollador", "Editor");
-    foreach(var item in listaDeJuegos[letra])
+    foreach (IGrouping<char, Game> Grupo in listaDeJuegos)
     {
-        Console.WriteLine("{0, -35} {1, -25} {2, -25} {3, -25}", item.Titulo, string.Join(", ", item.Plataforma), item.Desarrollador, item.Editor);
+        Console.WriteLine(Grupo.Key);
+        foreach (Game str in Grupo)
+            Console.WriteLine("    {0}", str.Titulo);
     }
 }
 
