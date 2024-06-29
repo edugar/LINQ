@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Net;
 
 namespace linq
 {
@@ -327,6 +328,38 @@ namespace linq
         }
 
         //JOIN
+        public IEnumerable<Union> linqInnerJoin(string Condicion)
+        {            
+            //Method syntax
+            var result = videojuegos
+                .Where(j => j.Titulo.Contains(Condicion))
+                .Join(usuarios, 
+                j => j.Titulo,
+                u => u.Juegos_Favoritos[0],
+                (j, u) => new Union 
+                {
+                    IdJuego = j.Id,
+                    Titulo = j.Titulo,
+                    Fecha_lanzamiento = j.Fecha_lanzamiento,
+                    Genero = j.Genero,
+                    Precio = j.Precio,
+                    Calificacion = j.Calificacion,
+                    IdUsuario = u.Id,
+                    Nombre_Usuario = u.Nombre_Usuario,
+                    Horas_Jugadas_Semana = u.Horas_Jugadas_Semana
+                });
+
+            //Query syntax
+            
+
+
+
+
+
+
+
+            return result;
+        }
 
         //LEFT JOIN
 

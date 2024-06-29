@@ -1,6 +1,6 @@
 ﻿public class User
 {
-    public string Id { get; }
+    public int Id { get; }
     public string Nombre_Usuario { get; set; }
     public int Edad { get; set; }
     public string Pais { get; set; }

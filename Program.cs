@@ -144,17 +144,25 @@ while (!final)
             break;
         case 20:
             Console.WriteLine("INNER JOIN");
-            ImprimirLista(consultas.VideoJuegos());
+            Console.Write("Titulo del juego: ");
+            condicion = Console.ReadLine();
+            ImprimirJoin(consultas.linqInnerJoin(condicion));
+            Console.ReadLine();
+            menu();
             break;
         case 21:
             Console.WriteLine("LEFT JOIN");
             ImprimirLista(consultas.VideoJuegos());
             break;
         case 22:
-            Console.WriteLine("RIGTH JOIN");
+            Console.WriteLine("GROUP JOIN");
             ImprimirLista(consultas.VideoJuegos());
             break;
         case 23:
+            Console.WriteLine("CROSS JOIN");
+            ImprimirLista(consultas.VideoJuegos());
+            break;
+        case 24:
             Console.WriteLine("LIMPIAR");
             Console.Clear();
             menu();
@@ -228,10 +236,12 @@ void ImprimirDiccionario(ILookup<char, Game> listaDeJuegos)
     }
 }
 
+void ImprimirJoin(IEnumerable<Union> listaDeJuegos)
+{
+    Console.WriteLine("{0, -35} {1, -50} {2, -25} {3, -25} {4, -25}\n", "Titulo", "Usuario", "Precio", "Genero", "Horas_Jugadas_Semana");
+    foreach (var item in listaDeJuegos)
+    {
+        Console.WriteLine("{0, -35} {1, -50} {2, -25} {3, -25} {4, -25}", item.Titulo, item.Nombre_Usuario, item.Precio, item.Genero, item.Horas_Jugadas_Semana);
+    }
+}
 
-//"titulo": "Metal Gear Solid",
-//    "desarrollador": "Konami",
-//    "editor": "Konami",
-//    "fecha_lanzamiento": "1998-09-03",
-//    "genero": [ "Acción", "Sigilo" ],
-//    "plataforma": [ "PlayStation" ]
