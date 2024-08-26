@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Net;
+using System.Reflection;
 
 namespace linq
 {
@@ -327,14 +329,93 @@ namespace linq
         }
 
         //JOIN
+        public IEnumerable<Union> linqInnerJoin(string Condicion)
+        {            
+            ////Method syntax
+            //var result = videojuegos
+            //    .Where(j => j.Titulo.Contains(Condicion))
+            //    .Join(usuarios, 
+            //    j => j.Titulo,
+            //    u => u.Juegos_Favoritos[0],
+            //    (j, u) => new Union 
+            //    {
+            //        IdJuego = j.Id,
+            //        Titulo = j.Titulo,
+            //        Fecha_lanzamiento = j.Fecha_lanzamiento,
+            //        Genero = j.Genero,
+            //        Precio = j.Precio,
+            //        Calificacion = j.Calificacion,
+            //        IdUsuario = u.Id,
+            //        Nombre_Usuario = u.Nombre_Usuario,
+            //        Horas_Jugadas_Semana = u.Horas_Jugadas_Semana
+            //    });
 
-        //LEFT JOIN
+            //Query syntax
+            var result = from j in videojuegos
+                     join u in usuarios on j.Titulo equals u.Juegos_Favoritos[0]
+                     where j.Titulo.Contains(Condicion)
+                     select new Union
+                     {
+                         IdJuego = j.Id,
+                         Titulo = j.Titulo,
+                         Fecha_lanzamiento = j.Fecha_lanzamiento,
+                         Genero = j.Genero,
+                         Precio = j.Precio,
+                         Calificacion = j.Calificacion,
+                         IdUsuario = u.Id,
+                         Nombre_Usuario = u.Nombre_Usuario,
+                         Horas_Jugadas_Semana = u.Horas_Jugadas_Semana
+                     };
 
-        //RIGTH JOIN
+            return result;
+        }
+
+        //CROSS JOIN
+        public IEnumerable<Union> linqCrossJoin()
+        {
+            ////Method syntax
+            //var result = videojuegos               
+            //    .Join(usuarios,
+            //    j => true,
+            //    u => true,
+            //    (j, u) => new Union
+            //    {
+            //        Titulo = j.Titulo,
+            //        Nombre_Usuario = u.Nombre_Usuario
+            //    });
+
+            //Query syntax
+            var result = from j in videojuegos
+                         from u in usuarios
+                         select new Union
+                         {
+                             Titulo = j.Titulo,
+                             Nombre_Usuario = u.Nombre_Usuario
+                         };
+
+            return result;
+        }
+
+        //LEFT OUTER JOIN
+        //public IEnumerable<Union> linqLeftJoin()
+        //{
+        //    ////Method syntax
+        //    var result = videojuegos.GroupJoin(
+        //        j => j.Titulo,
+        //        u => u.Titulo,
+        //        (j, u) => new Union
+        //        {
+        //            Titulo = j.Titulo,
+        //            Nombre_Usuario = u.Nombre_Usario
+        //        });
 
 
+        //    ////Qyery syntax
+
+        //}
 
 
+        //GROUP JOIN
 
 
 
