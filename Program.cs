@@ -160,7 +160,7 @@ while (!final)
             break;
         case 23:
             Console.WriteLine("CROSS JOIN");
-            ImprimirLista(consultas.VideoJuegos());
+            ImprimirCrossJoin(consultas.linqCrossJoin());
             break;
         case 24:
             Console.WriteLine("LIMPIAR");
@@ -199,7 +199,8 @@ void menu()
     Console.WriteLine("20 - INNER JOIN");
     Console.WriteLine("21 - LEFT JOIN");
     Console.WriteLine("22 - RIGTH JOIN");
-    Console.WriteLine("23 - LIMPIAR");
+    Console.WriteLine("23 - CROSS JOIN");
+    Console.WriteLine("24 - LIMPIAR");
 
     Console.Write("Selecciona una opción:");
 }
@@ -245,3 +246,11 @@ void ImprimirJoin(IEnumerable<Union> listaDeJuegos)
     }
 }
 
+void ImprimirCrossJoin(IEnumerable<Union> listaDeJuegos)
+{
+    Console.WriteLine("{0, -50} {1, -50}\n", "Titulo", "Usuario");
+    foreach (var item in listaDeJuegos)
+    {
+        Console.WriteLine("{0, -50} {1, -50} ", item.Titulo, item.Nombre_Usuario);
+    }
+}
